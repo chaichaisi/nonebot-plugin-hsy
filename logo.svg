@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#2b1055"/>
+      <stop offset="55%" stop-color="#b83280"/>
+      <stop offset="100%" stop-color="#ff7e5f"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="32" y="32" width="960" height="960" rx="220" fill="url(#bg)"/>
+
+  <circle cx="512" cy="450" r="190" fill="#ffd75e"/>
+
+  <rect x="292" y="596" width="440" height="36" rx="18" fill="#ffffff" opacity="0.9"/>
+  <rect x="352" y="664" width="320" height="28" rx="14" fill="#ffffff" opacity="0.6"/>
+  <rect x="422" y="722" width="180" height="20" rx="10" fill="#ffffff" opacity="0.35"/>
+
+  <text x="512" y="920" font-family="'Noto Sans SC','Microsoft YaHei','PingFang SC',sans-serif" font-size="32" font-weight="600" text-anchor="middle" fill="#ffd9a8">版权所有 严禁商用</text>
+</svg>
