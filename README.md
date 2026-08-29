@@ -1,126 +1,217 @@
 <div align="center">
-  <a href="https://v2.nonebot.dev/store"><img src="https://github.com/A-kirami/nonebot-plugin-template/blob/resources/nbp_logo.png" width="180" height="180" alt="NoneBotPluginLogo"></a>
+  <a href="https://github.com/chaichaisi/nonebot-plugin-hsy"><img src="./logo.svg" width="240" height="240" alt="火烧云HSY Logo"></a>
   <br>
-  <p><img src="https://github.com/A-kirami/nonebot-plugin-template/blob/resources/NoneBotPlugin.svg" width="240" alt="NoneBotPluginText"></p>
+  <sub>Logo 版权：Chaichaisi 版权所有，严禁商用</sub>
+  <br>
 </div>
 
 <div align="center">
 
-# nonebot-plugin-template
+# nonebot-plugin-hsy
 
-_✨ NoneBot 插件简单描述 ✨_
+_✨ 火烧云 / 晚霞 查询与定时提醒插件 ✨_
 
 
+<a href="https://github.com/chaichaisi/nonebot-plugin-hsy/stargazers">
+    <img alt="GitHub stars" src="https://img.shields.io/github/stars/chaichaisi/nonebot-plugin-hsy?color=%2300BFFF&style=flat-square">
+</a>
+<a href="https://github.com/chaichaisi/nonebot-plugin-hsy/issues">
+    <img alt="GitHub issues" src="https://img.shields.io/github/issues/chaichaisi/nonebot-plugin-hsy?color=Emerald%20green&style=flat-square">
+</a>
+<a href="https://github.com/chaichaisi/nonebot-plugin-hsy/network">
+    <img alt="GitHub forks" src="https://img.shields.io/github/forks/chaichaisi/nonebot-plugin-hsy?color=%2300BFFF&style=flat-square">
+</a>
 <a href="./LICENSE">
-    <img src="https://img.shields.io/github/license/owner/nonebot-plugin-template.svg" alt="license">
+    <img src="https://img.shields.io/github/license/chaichaisi/nonebot-plugin-hsy.svg" alt="license">
 </a>
-<a href="https://pypi.python.org/pypi/nonebot-plugin-template">
-    <img src="https://img.shields.io/pypi/v/nonebot-plugin-template.svg" alt="pypi">
+<a href="https://pypi.python.org/pypi/nonebot-plugin-hsy">
+    <img src="https://img.shields.io/pypi/v/nonebot-plugin-hsy.svg" alt="pypi">
 </a>
-<img src="https://img.shields.io/badge/python-3.9+-blue.svg" alt="python">
+<a href="https://www.python.org">
+    <img src="https://img.shields.io/badge/python-3.10+-blue.svg" alt="python">
+</a>
 
 </div>
 
-这是一个 nonebot2 插件项目的模板库, 你可以直接使用本模板创建你的 nonebot2 插件项目的仓库
+## 🙏 致谢
 
-<details open>
-<summary>模板库使用方法</summary>
+- 感谢 [nonebot_plugin_smallapi](https://github.com/chaichaisi/nonebot_plugin_smallapi) 提供的 README 排版参考
+- 感谢 [nonebot-plugin-template](https://github.com/A-kirami/nonebot-plugin-template) 项目模板
 
-1. 点击 [![start-course](https://user-images.githubusercontent.com/1221423/235727646-4a590299-ffe5-480d-8cd5-8194ea184546.svg)](https://github.com/new?template_owner=A-kirami&template_name=nonebot-plugin-template&owner=%40me&name=nonebot-plugin-&visibility=public) 创建仓库
-2. 在创建好的新仓库中, 在 "Add file" 菜单中选择 "Create new file", 在新文件名处输入`LICENSE`, 此时在右侧会出现一个 "Choose a license template" 按钮, 点击此按钮选择开源协议模板, 然后在最下方提交新文件到主分支
-3. 全局替换`owner`为仓库所有者ID; 全局替换`nonebot-plugin-template`为插件名; 全局替换`nonebot_plugin_template`为包名; 修改 python 徽标中的版本为你插件的运行所需版本
-4. 修改 README 中的插件名和插件描述, 并在下方填充相应的内容
+## 📖 前言及介绍
 
-</details>
+通过调用日落/晚霞数据接口，获取城市当天的日落时间、晚霞概率与晚霞质量。支持直接查询，也支持订阅城市，在日落前 1 小时、30 分钟自动提醒，让你不错过每一场晚霞。
 
-> [!NOTE]
-> 模板库中自带了一个发布工作流, 你可以使用此工作流自动发布你的插件到 pypi
+## 🔧 开发环境
 
-<details>
-<summary>配置发布工作流</summary>
-
-1. 前往 https://pypi.org/manage/account/#api-tokens 并创建一个新的 API 令牌。创建成功后不要关闭页面，不然你将无法再次查看此令牌。
-2. 在单独的浏览器选项卡或窗口中，打开 [Actions secrets and variables](./settings/secrets/actions) 页面。你也可以在 Settings - Secrets and variables - Actions 中找到此页面。
-3. 点击 New repository secret 按钮，创建一个名为 `PYPI_API_TOKEN` 的新令牌，并从第一步复制粘贴令牌。
-
-</details>
-
-> [!IMPORTANT]
-> 这个发布工作流需要 pyproject.toml 文件, 并且只支持 [PEP 621](https://peps.python.org/pep-0621/) 标准的 pyproject.toml 文件
-
-<details>
-<summary>触发发布工作流</summary>
-从本地推送任意 tag 即可触发。
-
-创建 tag:
-
-    git tag <tag_name>
-
-推送本地所有 tag:
-
-    git push origin --tags
-
-</details>
-
-## 📖 介绍
-
-这里是插件的详细介绍部分
+- NoneBot2：2.x
+- Python：3.10+
+- 操作系统：Linux / Windows / macOS
+- 适配器：OneBot V11（NapCat / LLOneBot / Go-CQHTTP 等）
 
 ## 💿 安装
 
-<details open>
-<summary>使用 nb-cli 安装</summary>
-在 nonebot2 项目的根目录下打开命令行, 输入以下指令即可安装
+### 1. nb-cli 安装（推荐）
 
-    nb plugin install nonebot-plugin-template
+在你 bot 工程的文件夹下运行：
 
-</details>
+```
+nb plugin install nonebot-plugin-hsy
+```
 
-<details>
-<summary>使用包管理器安装</summary>
-在 nonebot2 项目的插件目录下, 打开命令行, 根据你使用的包管理器, 输入相应的安装命令
+### 2. pip 安装
 
-<details>
-<summary>pip</summary>
+```
+pip install nonebot-plugin-hsy
+```
 
-    pip install nonebot-plugin-template
-</details>
-<details>
-<summary>pdm</summary>
+若是默认 nb-cli 创建的 nonebot2 工程，在 `pyproject.toml` 的 `[tool.nonebot.plugins]` 中添加一行：
 
-    pdm add nonebot-plugin-template
-</details>
-<details>
-<summary>poetry</summary>
+```toml
+[tool.nonebot.plugins]
+nonebot-plugin-hsy = ["nonebot_plugin_hsy"]
+```
 
-    poetry add nonebot-plugin-template
-</details>
-<details>
-<summary>conda</summary>
+### 3. 本地安装（不推荐）
 
-    conda install nonebot-plugin-template
-</details>
-
-打开 nonebot2 项目根目录下的 `pyproject.toml` 文件, 在 `[tool.nonebot]` 部分追加写入
-
-    plugins = ["nonebot_plugin_template"]
-
-</details>
+下载源码后，将 `nonebot_plugin_hsy` 目录放到 `你的bot/src/plugins/` 下即可。
 
 ## ⚙️ 配置
 
-在 nonebot2 项目的`.env`文件中添加下表中的必填配置
+在 nonebot2 项目的 `.env` 文件中添加以下配置项（全部可选，不填用默认值）：
 
-| 配置项 | 必填 | 默认值 | 说明 |
-|:-----:|:----:|:----:|:----:|
-| 配置项1 | 是 | 无 | 配置说明 |
-| 配置项2 | 否 | 无 | 配置说明 |
+| 配置项 | 默认值 | 说明 |
+|:---:|:---:|:---:|
+| hsy_data_path | hsy/hsy_data.json | 订阅数据保存路径（相对 bot 运行目录） |
+| hsy_refresh_interval | 1 | 提醒任务刷新间隔（分钟） |
+| hsy_bot_id | 空 | 多 bot 在线时指定机器人 QQ 号，空则取第一个 |
 
-## 🎉 使用
-### 指令表
-| 指令 | 权限 | 需要@ | 范围 | 说明 |
-|:-----:|:----:|:----:|:----:|:----:|
-| 指令1 | 主人 | 否 | 私聊 | 指令说明 |
-| 指令2 | 群员 | 是 | 群聊 | 指令说明 |
-### 效果图
-如果有效果图的话
+示例：
+
+```
+hsy_data_path="hsy/hsy_data.json"
+hsy_refresh_interval=1
+```
+
+机器人超管使用 nonebot 内置配置 `SUPERUSERS`，配置后即可使用管理命令。
+
+如果希望命令不带 `/` 前缀直接输入（如 `hsy 重庆` 而不是 `/hsy 重庆`），在 `.env` 中设置 `COMMAND_START=[""]` 即可。
+
+## 🎉 功能
+
+1. 直接查询任意城市当天火烧云情况
+2. 订阅城市，日落前 1 小时 / 30 分钟自动提醒（每个用户最多 5 个，超管不限）
+3. 一键刷新，立即获取你所有订阅的最新数据
+4. 无数据的订阅每 30 分钟自动重试，直至获取到数据后才开始提醒任务
+5. 查看订阅：所有用户可查看自己的订阅，超管可查看全部或指定用户
+6. 命令写法灵活：支持无空格写法（如 `hsyadd 城市`、`hsy add城市`），多余参数自动忽略
+
+## 👉 命令
+
+PS：命令起始符默认 `/`，若已配置 `COMMAND_START=[""]` 则直接输入命令即可。以下用 `hsy` 举例。
+
+命令可不加空格，以下写法等价：`hsy add 秭归`、`hsy add秭归`、`hsyadd 秭归`、`hsyadd秭归`。多余的参数会被自动忽略（如 `hsy add 重庆 上海` 只订阅重庆）。
+
+### 用户命令
+
+| 命令 | 说明 |
+|:---:|:---:|
+| `hsy 城市` | 直接查询该城市火烧云情况 |
+| `hsy add 城市` | 订阅城市，日落前1小时/30分钟各提醒一次 |
+| `hsy rm 城市` | 取消订阅 |
+| `hsy 刷新` | 立即获取你所有订阅的最新数据并发送给你 |
+| `hsy list` | 查看你的订阅（合并转发，含提醒任务状态） |
+| `hsy info` | 插件信息 |
+| `hsy help` | 功能菜单 |
+
+例如：`hsy add 重庆`、`hsy 上海`、`hsy 刷新`、`hsyadd秭归`。
+
+### 管理员命令（超管可用）
+
+| 命令 | 说明 |
+|:---:|:---:|
+| `hsy list 用户id` | 合并转发查看指定用户的订阅（不带参数则查看全部） |
+| `hsy uadd 用户id 城市` | 为指定用户添加订阅 |
+| `hsy urm 用户id 城市` | 删除指定用户的订阅 |
+
+提醒任务状态：`即将` 还没到提醒时间，`完成` 提醒已发出，`失败` 提醒发出失败。
+
+提醒发送优先级：私聊（好友）→ 临时会话（共同群）→ 群内 @（用户订阅）。管理员代加的订阅仅私聊/临时会话，失败则标记为失败并后台报错。
+
+## 🚀 高阶玩法：数据源与字段模板
+
+插件按「JSON 示例模板」方式访问数据源：模板声明插件需要的字段（`date` / `time` / `quality` / `aod`）在返回 JSON 中的位置，字段值是「路径」，路径用 `.` 分隔，支持嵌套与数组下标。
+
+### 内置接口（开箱即用）
+
+`hsy_api_url` 不配置时，插件使用内置接口 sunsetbot.top，`query_id` 自动生成随机数，`{citys}` 自动替换为 URL 编码的城市名：
+
+```
+https://sunsetbot.top/?query_id={query_id}&intend=select_city&query_city={citys}&event_date=None&event=set_1&times=None
+```
+
+内置接口返回结构（无该次预报时各字段为 `-`）：
+
+```json
+{ "status": "ok", "tb_event_time": "2026-08-29 18:24", "tb_quality": "0.0（不烧）", "tb_aod": "0.197（水晶）" }
+```
+
+插件自动从 `tb_event_time` 拆出日期与 `HH:MM` 时间，`-` 视为暂无数据。
+
+### 自定义 API
+
+如果有自己的数据源，配置 `hsy_api_url`（`{city}` 占位符会被替换为 URL 编码的城市名）：
+
+```
+hsy_api_url="https://your-api.example.com/sunset?city={city}"
+```
+
+自定义接口的返回结构若与内置不同，用 `hsy_field_template` 声明「插件字段 → JSON 路径」模板，值为与返回结构对应的路径示例：
+
+| 配置项 | 说明 |
+|:---:|:---:|
+| `hsy_api_url` | 数据接口链接，`{city}` / `{citys}` 为城市占位符，`{query_id}` 自动生成随机数；不配置使用内置 sunsetbot.top 接口 |
+| `hsy_field_template` | JSON 示例模板，形如 `{"time": "result.sunset_time", ...}`，声明各字段在返回 JSON 中的路径；留空使用内置默认模板（对应 `tb_event_time` / `tb_quality` / `tb_aod`） |
+
+例如你的接口返回：
+
+```json
+{ "status": 200, "result": { "date": "2026-08-30", "sunset_time": "2026-08-30 19:20", "rate": 0.72, "desc": "中霞" } }
+```
+
+则需配置：
+
+```
+hsy_api_url="https://your-api.example.com/sunset?city={city}"
+hsy_field_template='{"date":"result.date","time":"result.sunset_time","quality":"result.rate","aod":"result.desc"}'
+```
+
+模板字段路径为「示例」写法，插件会按路径从真实响应中取对应位置的值。字段缺失、值为空或 `-` 时，查询会提示「暂无可用数据」，订阅会每 30 分钟自动重试。
+
+数组取下标：`{"time": "list.0.time"}` 表示取 `list[0].time`。
+
+## 📝 更新日志
+
+<details>
+<summary>展开/收起</summary>
+
+### 26.8.2
+
+- 新增 `hsy 刷新` 命令：立即获取当前用户所有订阅的最新数据
+- 订阅上限：每个用户最多 5 个订阅，超级管理员不限
+- `hsy list` 对所有用户开放：普通用户查看自己的订阅，超管可查看全部或指定用户，均合并转发
+- 无数据的订阅每 30 分钟自动重试，直至获取到数据后才进入提醒流程
+- 命令支持无空格写法（`hsyadd 城市` / `hsy add城市`），多余参数自动忽略
+- 订阅数据默认保存至 `hsy/hsy_data.json`（相对 bot 运行目录）
+- 数据源改为「JSON 示例模板」方式：内置使用 sunsetbot.top 接口（`query_id` 自动随机、`{citys}` 自动替换城市），自定义接口用 `hsy_field_template` 声明各字段在返回 JSON 中的路径，支持嵌套与数组下标
+- Logo 简化重绘
+
+### 0.0.0
+
+- 插件初次发布
+
+</details>
+
+## 版权声明
+
+Logo 与插件本体版权归 Chaichaisi 所有，基于 LGPL-2.1 协议开源，**严禁商用**。
