@@ -82,14 +82,14 @@ nonebot-plugin-hsy = ["nonebot_plugin_hsy"]
 
 | 配置项 | 默认值 | 说明 |
 |:---:|:---:|:---:|
-| hsy_data_path | hsy/hsy_data.json | 订阅数据保存路径（相对 bot 运行目录） |
+| hsy_data_path | hsy_data.json | 订阅数据文件名（保存在 localstore 插件数据目录） |
 | hsy_refresh_interval | 1 | 提醒任务刷新间隔（分钟） |
 | hsy_bot_id | 空 | 多 bot 在线时指定机器人 QQ 号，空则取第一个 |
 
 示例：
 
 ```
-hsy_data_path="hsy/hsy_data.json"
+hsy_data_path="hsy_data.json"
 hsy_refresh_interval=1
 ```
 
@@ -194,6 +194,11 @@ hsy_field_template='{"date":"result.date","time":"result.sunset_time","quality":
 
 <details>
 <summary>展开/收起</summary>
+
+### 26.10.1
+
+- 订阅数据改由 nonebot-plugin-localstore 的 `get_plugin_data_dir()` 管理存储目录
+- 版本号更新至 26.10.1
 
 ### 26.8.2
 
