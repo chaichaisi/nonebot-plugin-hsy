@@ -17,7 +17,7 @@ from . import api, store
 from . import service  # noqa: F401
 from .store import STATUS_MAP
 
-__version__ = "26.8.2"
+__version__ = "26.10.1"
 
 MAX_SUBS = 5
 
@@ -60,7 +60,7 @@ __plugin_meta__ = PluginMetadata(
     extra={
         "unique_name": "hsy",
         "author": "Chaichaisi <chaichaisi@qq.com>",
-        "version": "26.8.2",
+        "version": "26.10.1",
     }
 )
 

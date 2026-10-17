@@ -12,7 +12,7 @@ DEFAULT_API_URL = (
 
 
 class Config(BaseModel):
-    hsy_data_path: str = "hsy/hsy_data.json"
+    hsy_data_path: str = "hsy_data.json"
     hsy_refresh_interval: int = 1
     hsy_bot_id: str = ""
     hsy_api_url: str = DEFAULT_API_URL

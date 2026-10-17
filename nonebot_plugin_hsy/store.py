@@ -3,6 +3,12 @@ import threading
 from datetime import datetime
 from pathlib import Path
 
+from nonebot import require
+
+require("nonebot_plugin_localstore")
+
+import nonebot_plugin_localstore as localstore
+
 from .config import config
 
 _lock = threading.Lock()
@@ -12,7 +18,8 @@ STATUS_MAP = {"pending": "即将", "done": "完成", "failed": "失败"}
 
 
 def _path() -> Path:
-    return Path(config.hsy_data_path)
+    data_dir = localstore.get_plugin_data_dir()
+    return data_dir / (config.hsy_data_path or "hsy_data.json")
 
 
 def load() -> dict:
